@@ -5,3 +5,13 @@
   color: red;
   font-size: 1.2rem;
 }
+.pagination {
+  display: flex;
+}
+.prevPage,
+.nextPage {
+  /* border: 1px solid black; */
+  box-shadow: 2px 2px 5px gray;
+  border-radius: 3px;
+  padding: 4px 10px;
+}

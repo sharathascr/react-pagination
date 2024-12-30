@@ -29,6 +29,7 @@ function App() {
   };
   return (
     <div className="App">
+      <label>Todos per Page</label>
       <select onChange={(e) => setNumOfTodosPerPage(e.target.value)}>
         <option value="" key="">
           10
@@ -41,15 +42,21 @@ function App() {
       {visibleTodos.map((todo) => (
         <p key={todo.id}>{todo.title}</p>
       ))}
-      <p onClick={handlePrevPage}>prev</p>
-      {pages1.map((page) => (
-        <span
-          key={page}
-          className={`${currentPage === page ? "active" : ""}`}
-          onClick={() => setCurrentPage(page)}
-        >{`${page} |`}</span>
-      ))}
-      <p onClick={handleNextPage}>next</p>
+      <div className="pagination">
+        <p className="prevPage" onClick={handlePrevPage}>
+          prev
+        </p>
+        {pages1.map((page) => (
+          <span
+            key={page}
+            className={`${currentPage === page ? "active" : ""}`}
+            onClick={() => setCurrentPage(page)}
+          >{` ${page} `}</span>
+        ))}
+        <p className="nextPage" onClick={handleNextPage}>
+          next
+        </p>
+      </div>
     </div>
   );
 }
